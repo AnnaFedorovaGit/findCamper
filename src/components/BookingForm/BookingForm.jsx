@@ -60,7 +60,7 @@ const BookingForm = () => {
               control={control}
               render={({ field }) => (
                 <DatePicker
-                  {...field}
+                {...field}
                   selected={dateReceived}
                   onChange={(date) => {
                     field.onChange(date);
@@ -69,8 +69,10 @@ const BookingForm = () => {
                   calendarStartDay={1}
                   placeholderText='Booking date'
                   className={`${css.inputCommon} ${css.inputCalendar}`}
+                  calendarClassName={css.calendarStyles}
                   minDate={new Date()}
                   popperProps={{ modifiers: { preventOverflow: { enabled: false } } }}
+                  formatWeekDay={(day) => day.substr(0, 3).toUpperCase()}
                 />
               )}
             />
