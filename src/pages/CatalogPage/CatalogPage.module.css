@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 100px 63px;
+  gap: 63px;
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.list {
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  border: 1px solid var(--gray-light);
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.active:hover,
+.active:focus {
+  border: 1px solid var(--button);
+}
+
+.disabled {
+  cursor: default;
+}
+
+.textButton {
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}

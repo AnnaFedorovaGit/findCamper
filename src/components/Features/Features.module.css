@@ -1,0 +1,34 @@
+.featuresWrap {
+  width: 430px;
+  display: flex;
+  gap: 44px;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subject {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+.detailsInner {
+  display: grid;
+  gap: 14px;
+  padding-top: 24px;
+}
+
+.row {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  display: flex;
+  justify-content: space-between;
+}

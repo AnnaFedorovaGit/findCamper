@@ -1,0 +1,107 @@
+.form {
+  width: 448px;
+  /* height: 532px; */
+  padding: 24px;
+  border: 1px solid var(--gray-dark);
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 8px;
+}
+
+.text {
+  line-height: 150%;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.inputsInner {
+  margin-top: 14px;
+}
+
+.inputCommon {
+  width: 400px;
+  border-radius: 10px;
+  padding: 18px;
+  background-color: var(--inputs);
+  border: none;
+  outline: none;
+}
+
+.inputCommon:-webkit-autofill,
+.inputCommon:-webkit-autofill:hover,
+.inputCommon:-webkit-autofill:focus,
+.inputCommon:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 1s;
+}
+
+.inputCommon::placeholder {
+  line-height: 125%;
+  color: rgba(16, 24, 40, 0.6);
+  transition: var(--transition);
+}
+
+.inputCommon:hover::placeholder,
+.inputCommon:focus::placeholder {
+  color: var(--main);
+}
+
+.input {
+  height: 56px;
+}
+
+.errorMessage {
+  font-size: 14px;
+  padding-left: 18px;
+  color: var(--button);
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding-right: 18px;
+  background-color: var(--inputs);
+}
+
+.inputCalendar {
+  height: 56px;
+  width: 362px;
+}
+
+.iconCalendar {
+  fill: transparent;
+  stroke: var(--main);
+}
+
+.textarea {
+  height: 114px;
+  resize: none;
+}
+
+.button {
+  width: 166px;
+  height: 56px;
+  padding: 16px 40px;
+  margin-top: 24px;
+  border-radius: 200px;
+  background-color: var(--button);
+  transition: var(--transition);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--button-hover);
+}
+
+.buttonText {
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}

@@ -1,0 +1,135 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--gray-dark);
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  min-height: 358px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  width: 290px;
+  height: 310px;
+}
+
+.image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.infoWrapper {
+  width: 526px;
+  min-height: 310px;
+}
+
+.headingInner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.buttonFavourite {
+  padding-top: 5px;
+  display: flex;
+  background-color: transparent;
+}
+
+.iconLocation,
+.iconFavourite {
+  fill: transparent;
+  stroke: var(--main);
+  transition: var(--transition);
+}
+
+.iconFavourite:hover,
+.iconFavourite:focus {
+  fill: var(--button);
+  stroke: var(--button);
+}
+
+.iconRating {
+  fill: var(--rating);
+}
+
+.priceInner {
+  display: flex;
+  gap: 10px;
+}
+
+.boxInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.subjectInner {
+  display: flex;
+  gap: 16px;
+}
+
+.holder {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subject {
+  line-height: 150%;
+}
+
+.reviews {
+  text-decoration: underline;
+}
+
+.desc {
+  line-height: 150%;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list {
+  height: 96px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.button {
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: var(--button);
+  transition: var(--transition);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--button-hover);
+}
+
+.active {
+  fill: var(--button-hover);
+  stroke: var(--button-hover);
+}
+
+.buttonText {
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}

@@ -1,0 +1,19 @@
+.category {
+  height: 44px;
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: var(--block-features);
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.icon {
+  fill: transparent;
+  stroke: var(--main);
+}

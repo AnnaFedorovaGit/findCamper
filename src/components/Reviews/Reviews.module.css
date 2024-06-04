@@ -1,0 +1,49 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 430px;
+}
+
+.captionWrap {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--block-features);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleShort {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--button);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+}
+
+.button {
+  height: 16px;
+  background-color: transparent;
+}
+
+.icon {
+  fill: var(--block-features);
+}
+
+.text {
+  line-height: 150%;
+  color: var(--text);
+}

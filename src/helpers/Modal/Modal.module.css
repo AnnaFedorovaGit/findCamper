@@ -1,0 +1,42 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.modal {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--white);
+  border-radius: 20px;
+  width: 982px;
+  height: 720px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 40px 16px 40px 40px;
+}
+
+.button {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  transition: var(--transition);
+}
+
+.button:hover .icon,
+.button:focus .icon {
+  stroke: var(--button-hover);
+}
+
+.icon {
+  stroke: var(--main);
+  transition: var(--transition);
+}
