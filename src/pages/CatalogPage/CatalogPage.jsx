@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCampersList, selectPage } from '../../redux/adverts/selectors';
-// import { selectCampersList, selectisDataEmpty, selectPage } from '../../redux/adverts/selectors';
 import { fetchAllCampers } from '../../redux/adverts/operations';
 import { setPage } from '../../redux/adverts/slice';
 import CamperCard from '../../components/CamperCard/CamperCard';
@@ -13,7 +12,6 @@ import css from './CatalogPage.module.css';
 const CatalogPage = () => {
   const [favouriteList, setFavouriteList] = useState([]);
   const campers = useSelector(selectCampersList);
-  // const isDataEmpty = useSelector(selectisDataEmpty);
   const currentPage = useSelector(selectPage);
   const dispatch = useDispatch();
 

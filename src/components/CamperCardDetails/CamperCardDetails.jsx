@@ -36,7 +36,7 @@ const CamperCardDetails = ({ camper }) => {
                     </div>
                 </div>
 
-                <p className={css.heading}>&#8364;{price}</p>
+                <p className={css.heading}>&#8364;{price.toFixed(2)}</p>
             </div>
 
             <div className={css.scrollBlock}>

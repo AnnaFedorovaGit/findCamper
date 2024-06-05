@@ -6,7 +6,6 @@ const initialState = {
   campers: [],
   forms: [],
   page: 1,
-  isDataEmpty: false,
   isLoading: false,
   error: null,
 };
@@ -16,7 +15,7 @@ const campersSlice = createSlice({
   initialState,
   reducers: {
     setPage: (state, action) => {
-      state.page = action.payload
+      state.page = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -28,7 +27,6 @@ const campersSlice = createSlice({
       .addCase(fetchAllCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.campers = [...state.campers, ...payload];
-        state.isDataEmpty = !payload.length;
       })
       .addCase(fetchAllCampers.rejected, (state, { payload }) => {
         state.isLoading = false;
