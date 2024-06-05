@@ -19,10 +19,13 @@
 }
 
 .button {
-  border-radius: 200px;
-  padding: 16px 40px;
   width: 166px;
   height: 56px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  border-radius: 200px;
+  padding: 16px 40px;
   border: 1px solid var(--gray-light);
   background-color: var(--white);
   transition: var(--transition);
@@ -36,10 +39,4 @@
 .disabled {
   cursor: default;
   color: var(--gray-light);
-}
-
-.textButton {
-  font-weight: 500;
-  line-height: 150%;
-  letter-spacing: -0.01em;
 }

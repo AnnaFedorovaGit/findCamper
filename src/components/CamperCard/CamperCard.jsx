@@ -60,9 +60,7 @@ const CamperCard = ({ camper, favouriteList, onFavourite }) => {
               <ul className={css.list}>
                   <FeaturesCategories camper={camper} />
               </ul>
-              <button className={css.button} type='button' onClick={openModal}>
-                <p className={css.buttonText}>Show more</p>
-            </button>
+              <button className={css.button} type='button' onClick={openModal}>Show more</button>
 
             <Modal isOpen={isModalOpen} onClose={closeModal}>
               <CamperCardDetails camper={camper}/>

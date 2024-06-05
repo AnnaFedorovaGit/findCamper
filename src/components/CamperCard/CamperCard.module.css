@@ -109,10 +109,14 @@
 }
 
 .button {
-  border-radius: 200px;
-  padding: 16px 40px;
   width: 166px;
   height: 56px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  border-radius: 200px;
+  padding: 16px 40px;
+  color: var(--white);
   background-color: var(--button);
   transition: var(--transition);
 }
@@ -125,11 +129,4 @@
 .active {
   fill: var(--button-hover);
   stroke: var(--button-hover);
-}
-
-.buttonText {
-  font-weight: 500;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  color: var(--white);
 }

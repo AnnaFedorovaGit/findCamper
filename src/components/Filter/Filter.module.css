@@ -97,10 +97,14 @@
 }
 
 .button {
-  border-radius: 200px;
-  padding: 16px 60px;
   width: 173px;
   height: 56px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  border-radius: 200px;
+  padding: 16px 60px;
+  color: var(--white);
   background-color: var(--button);
   transition: var(--transition);
 }
@@ -108,13 +112,6 @@
 .button:hover,
 .button:focus {
   background-color: var(--button-hover);
-}
-
-.buttonText {
-  font-weight: 500;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  color: var(--white);
 }
 
 .item {

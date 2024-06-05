@@ -87,9 +87,7 @@ const BookingForm = () => {
           <textarea {...register('comment')} type='text' placeholder='Comment' className={`${css.inputCommon} ${css.textarea}`} />
         </div>
 
-        <button type='submit' className={css.button}>
-          <p className={css.buttonText}>Send</p>
-        </button>
+        <button type='submit' className={css.button}>Send</button>
 			</form>
 		</>
   );

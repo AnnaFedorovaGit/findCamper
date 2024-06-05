@@ -94,9 +94,7 @@ const Filter = () => {
           </div>      
         </div>
         
-        <button className={css.button} type='submit' onClick={handleSearch}>
-              <p className={css.buttonText}>Search</p>
-          </button>
+        <button className={css.button} type='submit' onClick={handleSearch}>Search</button>
 			</form>
 		</>
   );

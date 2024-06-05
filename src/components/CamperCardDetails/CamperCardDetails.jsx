@@ -51,12 +51,8 @@ const CamperCardDetails = ({ camper }) => {
                 <p className={css.desc}>{description}</p>
 
                 <div className={css.buttonsWrap}>
-                    <button className={css.button} onClick={() => handleSetTab('features')}>
-                        <p className={(activeTab === 'features') ? css.active : null}>Features</p>
-                    </button>
-                    <button className={css.button} onClick={() => handleSetTab('reviews')}>
-                        <p className={(activeTab === 'reviews') ? css.active : null}>Reviews</p>
-                    </button>
+                    <button className={`${css.button} ${(activeTab === 'features') ? css.active : null}`} onClick={() => handleSetTab('features')}>Features</button>
+                    <button className={css.button} onClick={() => handleSetTab('reviews')}>Reviews</button>
                 </div>
 
                 <div className={css.container}>

@@ -64,9 +64,7 @@ const CatalogPage = () => {
             <CamperCard key={camper._id} camper={camper} onFavourite={handleFavourite} favouriteList={favouriteList} />
           )}
         </ul>
-        <button disabled={!isFullArray} className={`${css.button} ${isFullArray ? css.active : css.disabled}`} onClick={handleLoadPage}>
-          <p className={css.textButton}>Load more</p>
-        </button>
+        <button disabled={!isFullArray} className={`${css.button} ${isFullArray ? css.active : css.disabled}`} onClick={handleLoadPage}>Load more</button>
       </div>
 
     </div>
