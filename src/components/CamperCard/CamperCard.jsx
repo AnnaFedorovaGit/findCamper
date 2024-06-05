@@ -28,7 +28,7 @@ const CamperCard = ({ camper, favouriteList, onFavourite }) => {
           <div className={css.headingInner}>
             <h3 className={css.heading}>{name}</h3>
             <div className={css.priceInner}>
-              <p className={css.heading}>&#8364;{price}</p>
+              <p className={css.heading}>&#8364;{price.toFixed(2)}</p>
               <button className={css.buttonFavourite} onClick={() => onFavourite(camper)}>
                 <svg className={isFavorite(_id) ? css.active : css.iconFavourite} width='21' height='19'>
                   <use href={`${icon}#icon-favourite`}></use>

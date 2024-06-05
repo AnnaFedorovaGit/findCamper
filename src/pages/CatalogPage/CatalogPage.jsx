@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCampersList, selectisDataEmpty, selectPage } from '../../redux/adverts/selectors';
+import { selectCampersList, selectPage } from '../../redux/adverts/selectors';
+// import { selectCampersList, selectisDataEmpty, selectPage } from '../../redux/adverts/selectors';
 import { fetchAllCampers } from '../../redux/adverts/operations';
 import { setPage } from '../../redux/adverts/slice';
 import CamperCard from '../../components/CamperCard/CamperCard';
@@ -12,7 +13,7 @@ import css from './CatalogPage.module.css';
 const CatalogPage = () => {
   const [favouriteList, setFavouriteList] = useState([]);
   const campers = useSelector(selectCampersList);
-  const isDataEmpty = useSelector(selectisDataEmpty);
+  // const isDataEmpty = useSelector(selectisDataEmpty);
   const currentPage = useSelector(selectPage);
   const dispatch = useDispatch();
 
@@ -65,7 +66,7 @@ const CatalogPage = () => {
             <CamperCard key={camper._id} camper={camper} onFavourite={handleFavourite} favouriteList={favouriteList} />
           )}
         </ul>
-        <button disabled={isDataEmpty} className={`${css.button} ${isFullArray ? css.active : css.disabled}`} onClick={handleLoadPage}>
+        <button disabled={!isFullArray} className={`${css.button} ${isFullArray ? css.active : css.disabled}`} onClick={handleLoadPage}>
           <p className={css.textButton}>Load more</p>
         </button>
       </div>
