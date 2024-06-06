@@ -23,8 +23,8 @@ const Filter = () => {
   };
     
   const handleSetType = (event) => {
-    const newType = event.target.value;
-    setSelectFilters({ ...selectFilters, form: newType });
+    const newForm = event.target.value;
+    setSelectFilters({ ...selectFilters, form: newForm });
   };
 
   // const handleSetEquipment = (event) => {
@@ -37,7 +37,7 @@ const Filter = () => {
   //       setSelectFilters({ ...selectFilters, details: selectFilters.details.filter((details) => details !== newEquipment)});
   //     }
   //   };
-    console.log(selectFilters);
+    // console.log(selectFilters);
     
   useEffect(() => {
     dispatch(fetchFilteredCampers(selectFilters));
