@@ -24,7 +24,7 @@ const Filter = () => {
     
   const handleSetType = (event) => {
     const newType = event.target.value;
-    setSelectFilters({ ...selectFilters, type: newType });
+    setSelectFilters({ ...selectFilters, form: newType });
   };
 
   // const handleSetEquipment = (event) => {
