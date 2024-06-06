@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllCampers, sendForm } from './operations.js';
+import { fetchAllCampers, fetchFilteredCampers, sendForm } from './operations.js';
 
 
 const initialState = {
@@ -31,7 +31,21 @@ const campersSlice = createSlice({
       .addCase(fetchAllCampers.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
-      })      
+      })  
+      // filtered Campers:
+      .addCase(fetchFilteredCampers.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchFilteredCampers.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        console.log("payload = ", payload);
+        state.campers = payload;
+      })
+      .addCase(fetchFilteredCampers.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })  
       // FORM:
       .addCase(sendForm.pending, (state) => {
         state.isLoading = true;

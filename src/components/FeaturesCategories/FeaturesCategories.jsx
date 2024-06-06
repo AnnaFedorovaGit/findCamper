@@ -1,3 +1,5 @@
+import { outputKey, iconName } from '../../helpers/infoFunctions/infoFunctions';
+
 import css from './FeaturesCategories.module.css';
 import icon from '../../images/sprite.svg';
 
@@ -6,15 +8,6 @@ const FeaturesCategories = ({ camper }) => {
     const { adults, engine, transmission, details } = camper;
 
     const output = ((key) => key.charAt(0).toUpperCase() + key.slice(1)); 
-    const iconName = ((key) => key.toLowerCase());
-
-    const outputKey = (key) => { 
-        if (key === 'airConditioner') {
-            return 'AC';
-        } else {
-            return key.charAt(0).toUpperCase() + key.slice(1);
-        }
-    }
 
     const outputValue = (value) => {
         if (typeof value === 'number' && value > 1) {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { reviewsInfo, locationReverse } from '../../helpers/infoFunctions/infoFunctions.jsx';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 
@@ -9,7 +10,6 @@ import icon from '../../images/sprite.svg';
 const CamperCardDetails = ({ camper }) => {
     const [activeTab, setActiveTab] = useState('features');
     const { name, location, price, gallery, description, rating, reviews } = camper;
-    const reviewsInfo = `${rating} (${reviews && reviews.length} Reviews)`;
     
     const handleSetTab = (tab) => {
         setActiveTab(tab);
@@ -25,14 +25,14 @@ const CamperCardDetails = ({ camper }) => {
                         <svg className={css.iconRating} width='16' height='16'>
                             <use href={`${icon}#icon-rating`}></use>
                         </svg>
-                        <p className={`${css.subject} ${css.reviews}`}>{reviewsInfo}</p>
+                        <p className={`${css.subject} ${css.reviews}`}>{reviewsInfo(rating, reviews)}</p>
                     </div>
 
                     <div className={css.holder}>
                         <svg className={css.iconLocation} width='16' height='16'>
                             <use href={`${icon}#icon-location`}></use>
                         </svg>
-                        <p className={css.subject}>{location}</p>
+                        <p className={css.subject}>{locationReverse(location)}</p>
                     </div>
                 </div>
 

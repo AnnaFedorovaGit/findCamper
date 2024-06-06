@@ -1,30 +1,52 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { fetchFilteredCampers } from '../../redux/adverts/operations';
+import { outputKey, iconName } from '../../helpers/infoFunctions/infoFunctions';
 
 import css from './Filter.module.css';
 import icon from '../../images/sprite.svg';
 
 
 const Filter = () => {
+  const dispatch = useDispatch();
   const { register } = useForm();
+  // const { register, handleSubmit } = useForm();
   const details = ['airConditioner', 'kitchen', 'beds', 'TV', 'CD', 'radio', 'shower', 'toilet', 'freezer', 'hob', 'microwave', 'gas', 'water'];
- 
-  const iconName = ((item) => item.toLowerCase());
-  
-  const outputKey = (item) => { 
-    if (item === 'airConditioner') {
-      return 'AC';
-    } else {
-      return item.charAt(0).toUpperCase() + item.slice(1);
-    }
-  }
 
-  const handleSearch = () => { 
-    event.preventDefault();
-  }
+  const [selectFilters, setSelectFilters] = useState({ location: '', type: '' });
+  // const [selectFilters, setSelectFilters] = useState({ location: '', details: [], type: '' });
+
+  const handleSetLocation = (event) => {
+    const newLocation = event.target.value;
+    setSelectFilters({ ...selectFilters, location: newLocation });
+  };
+    
+  const handleSetType = (event) => {
+    const newType = event.target.value;
+    setSelectFilters({ ...selectFilters, type: newType });
+  };
+
+  // const handleSetEquipment = (event) => {
+  //   const { checked } = event.target;
+  //   const newEquipment = event.target.value;
+    
+  //   if (checked) {
+  //       setSelectFilters({ ...selectFilters, details: [...selectFilters.details, newEquipment]});
+  //     } else {
+  //       setSelectFilters({ ...selectFilters, details: selectFilters.details.filter((details) => details !== newEquipment)});
+  //     }
+  //   };
+    console.log(selectFilters);
+    
+  useEffect(() => {
+    dispatch(fetchFilteredCampers(selectFilters));
+  }, [dispatch, selectFilters])
 
   return (   
     <>
 			<form className={css.form}>
+			{/* <form onSubmit={handleSubmit(onSubmit)} className={css.form}> */}
 				<div className={css.formContent}>
                   
           <div>
@@ -33,7 +55,7 @@ const Filter = () => {
               <svg className={css.iconLocation} width='18' height='20'>
                 <use href={`${icon}#icon-location`}></use>
               </svg>
-              <input {...register('location')} placeholder='Kyiv, Ukraine' className={css.input} />
+              <input {...register('location')} onChange={handleSetLocation} placeholder='Kyiv, Ukraine' className={css.input} />
             </div>
           </div>
 
@@ -44,13 +66,14 @@ const Filter = () => {
             <ul className={css.list}>
               {details.map((detail, index) => (
                 <li key={index} className={css.item}>
+                  {/* <input id={`${iconName(detail)}`} type='checkbox' {...register('details')} value={`${iconName(detail)}`} onChange={handleSetEquipment} /> */}
                   <input id={`${iconName(detail)}`} type='checkbox' {...register('details')} value={`${iconName(detail)}`} />
                     <label type='radio' htmlFor={`${iconName(detail)}`}>
                       <svg className={css.icon} width='22' height='24'>
                         <use href={`${icon}#icon-${iconName(detail)}`}></use>
                       </svg>
                       <p className={css.caption}>{outputKey(detail)}</p>
-                      </label>
+                    </label>
                   </li>
               ))}
               </ul>
@@ -61,7 +84,7 @@ const Filter = () => {
 
             <ul className={css.list}>          
               <li className={css.item}>
-                <input id='alcove' type='radio' {...register('form-type')} value='alcove' />
+                <input id='alcove' type='radio' {...register('form')} value='alcove' onChange={handleSetType} />
                 <label type='radio' htmlFor='alcove'>
                   <svg width='40' height='29'>
                     <use href={`${icon}#icon-alcove`}></use>
@@ -71,7 +94,7 @@ const Filter = () => {
               </li>
 
               <li className={css.item}>
-                <input id='integrated' type='radio' {...register('form-type')} value='Fully Integrated' />
+                <input id='integrated' type='radio' {...register('form')} value='fully Integrated' onChange={handleSetType} />
                 <label type='radio' htmlFor='integrated'>
                   <svg width='40' height='29'>
                     <use href={`${icon}#icon-fully-integrated`}></use>
@@ -81,7 +104,7 @@ const Filter = () => {
               </li>
 
               <li className={css.item}>
-                <input id='truck' type='radio' {...register('form-type')} value='panel Truck' />
+                <input id='truck' type='radio' {...register('form')} value='panel Truck' onChange={handleSetType} />
                 <label type='radio' htmlFor='truck'>
                   <svg width='40' height='29'>
                     <use href={`${icon}#icon-van`}></use>
@@ -94,8 +117,8 @@ const Filter = () => {
           </div>      
         </div>
         
-        <button className={css.button} type='submit' onClick={handleSearch}>Search</button>
-			</form>
+        <button className={css.button} type='submit'>Search</button>
+      </form>
 		</>
   );
 };
