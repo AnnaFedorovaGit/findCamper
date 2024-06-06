@@ -17,11 +17,11 @@ export const fetchAllCampers = createAsyncThunk(
 export const fetchFilteredCampers = createAsyncThunk(
   "adverts/getFiltered",
   async (filter, thunkAPI) => {
-    const { location, type } = filter;
-    // const { location, details, type } = filter;
+    const { location, form } = filter;
+    // const { location, details, form } = filter;
     try {
-      const { data } = await apiInstance.get(`/adverts?location=${location}&form=${type}`);
-      // const { data } = await apiInstance.get(`/adverts?location=${location}&details=[${details}]&form=${type}`);
+      const { data } = await apiInstance.get(`/adverts?location=${location}&form=${form}`);
+      // const { data } = await apiInstance.get(`/adverts?location=${location}&details=[${details}]&form=${form}`);
       console.log("filter from operations = ", filter);
       console.log("data from operations = ", data);
       return data;

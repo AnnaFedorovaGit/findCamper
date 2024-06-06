@@ -14,8 +14,8 @@ const Filter = () => {
   // const { register, handleSubmit } = useForm();
   const details = ['airConditioner', 'kitchen', 'beds', 'TV', 'CD', 'radio', 'shower', 'toilet', 'freezer', 'hob', 'microwave', 'gas', 'water'];
 
-  const [selectFilters, setSelectFilters] = useState({ location: '', type: '' });
-  // const [selectFilters, setSelectFilters] = useState({ location: '', details: [], type: '' });
+  const [selectFilters, setSelectFilters] = useState({ location: '', form: '' });
+  // const [selectFilters, setSelectFilters] = useState({ location: '', details: [], form: '' });
 
   const handleSetLocation = (event) => {
     const newLocation = event.target.value;
